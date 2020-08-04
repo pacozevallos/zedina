@@ -1,0 +1,25 @@
+<div class="container">
+
+  <!-- <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active" *ngFor="let linea of lineas" *ngIf="lineas | async as linea">{{ linea.titulo }}</li>
+    </ol>
+  </nav> -->
+
+  <div class="d-flex justify-content-center">
+    <ul class="nav nav-pills subNav">
+      <li class="nav-item" *ngFor="let linea of lineas" >
+        <!-- <a *ngIf="linea.estado == 'enable' " class="nav-link rounded-circle p-3 m-2 m-lg-3" routerLink="{{linea.url}}" routerLinkActive="active" >
+          <img class="iconProduct" src="{{ linea.image }}">
+        </a> -->
+        <a class="nav-link rounded-circle p-3 m-2 m-lg-3" routerLink="{{linea.url}}" routerLinkActive="active" >
+          <img class="iconProduct" src="{{ linea.image }}">
+        </a>
+        <p class="small text-center">{{linea.titulo}}</p>
+      </li>
+    </ul>
+  </div>
+
+</div>

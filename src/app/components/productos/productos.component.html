@@ -1,0 +1,14 @@
+<div class="container py-6">
+  <hr class="mt-4">
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/inicio']">Inicio</a></li>
+      <li class="breadcrumb-item active">Productos</li>
+      <!-- <li class="breadcrumb-item active" *ngFor="let linea of lineas" *ngIf="lineas | async as linea">{{ linea.titulo }}</li> -->
+    </ol>
+  </nav>
+
+  <app-header-productos></app-header-productos>
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
+</div>

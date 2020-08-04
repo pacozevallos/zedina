@@ -1,0 +1,102 @@
+<!-- <div class="container pt-7">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="text-primary font-italic font-weight-bold">15 años ofreciendo calidad para tu mesa</h1>
+      <p class="h4 font-weight-light">Nuestro principal objetivo es ofrecer productos y servicios de calidad y excelencia. Para ello, hemos implementado recursos en infraestructura de última generación. Además, contamos con personal altamente especializado y capacitado en el rubro alimentario.</p>
+    </div>
+
+  </div>
+</div> -->
+
+
+<div class="pt-6">
+    <div class="container">
+        <hr class="mt-4 mb-0">
+    </div>
+    <div class="backNosotros pt-3">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/']">Inicio</a></li>
+                    <li class="breadcrumb-item active">Nosotros</li>
+                </ol>
+            </nav>
+            <div class="row pb-6">
+                <div class="col-md-6 d-flex align-items-center">
+                    <div>
+                        <h1 class="text-primary font-italic font-weight-bold">15 años garantizando la calidad de nuestros productos</h1>
+                        <h5 class="font-weight-light mt-4 mb-5">Nuestro principal objetivo es ofrecer productos y servicios de calidad y excelencia. Para ello, hemos implementado recursos en infraestructura de última generación. Además, contamos con personal altamente especializado y capacitado
+                            en el rubro alimentario.</h5>
+                        <!-- <a class="btn btn-primary btn-lg button px-4" routerLink="/">
+              <img height="16" class="mr-3" src="./assets/images/iconNext.svg">
+              Conócenos
+            </a> -->
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-end">
+                    <div>
+                        <img src="assets/images/madreHija2.png" width="100%" alt="Calidad para tu mesa Zedina">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row no-gutters">
+  <div class="col-md-6">
+    <img src="./assets/images/mision.jpg" alt="" width="100%">
+  </div>
+  <div class="col-md-6 d-flex align-items-center justify-content-center boxMision">
+    <div class="col-md-6 text-center px-4 py-3">
+      <img src="assets/images/iconMision.svg" alt="" width="120px">
+      <h3 class="text-white font-italic font-weight-bold my-4">Nuestra misión</h3>
+      <p class="font-weight-light">Atender las exigencias de los clientes con la finalidad de posicionarnos en el mercado nacional.</p>
+    </div>
+  </div>
+</div> -->
+<div class="row no-gutters">
+    <!-- <div class="col-lg-6 bgMision" style="min-height: 220px"></div> -->
+    <div class="col-lg-6 d-flex align-items-center justify-content-center boxMision">
+        <div class="col-lg-8 text-center py-4 px-lg-6">
+            <img src="assets/images/iconMision.svg" alt="" width="120px">
+            <h3 class="text-white font-italic font-weight-bold my-3">Nuestra misión</h3>
+            <p class="font-weight-light font-italic">Desarrollar productos cárnicos según las exigencias y necesidades de nuestros clientes, cumpliendo con los estándares de inocuidad y calidad.</p>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block alphaMision"></div>
+    </div>
+    <div class="col-lg-6 d-flex align-items-center justify-content-center boxVision">
+        <div class="col-lg-4 d-none d-lg-block alphaVision"></div>
+        <div class="col-lg-8 text-center py-3 px-lg-6">
+            <img src="assets/images/iconVision.svg" alt="" width="120px">
+            <h3 class="text-white font-italic font-weight-bold my-3">Nuestra visión</h3>
+            <p class="font-weight-light font-italic">Consolidarnos como una compañía reconocida en el procesamiento y comercialización de productos cárnicos a nivel nacional.</p>
+        </div>
+    </div>
+</div>
+<!-- <div class="row no-gutters mt-3">
+  <div class="col-lg-6 d-flex align-items-center justify-content-center boxVision">
+    <div class="col-lg-4 d-none d-lg-block alphaVision"></div>
+    <div class="col-lg-8 text-center py-3 px-lg-6">
+      <img src="assets/images/iconVision.svg" alt="" width="120px">
+      <h3 class="text-white font-italic font-weight-bold my-3">Nuestra visión</h3>
+      <p class="font-weight-light font-italic">Consolidarnos como una compañía reconocida en el procesamiento y comercialización de productos cárnicos a nivel nacional.</p>
+    </div>
+  </div>
+  <div class="col-lg-6 bgVision" style="min-height: 220px"></div>
+</div> -->
+
+<div class="text-center my-4 pt-5">
+    <h2 class="text-primary font-italic font-weight-bold">Nuestros valores</h2>
+    <p>Valoramos a las personas y las respetamos íntegramente.</p>
+</div>
+
+<div class="container pb-8">
+    <div class="row">
+        <div class="col-6 col-lg-4 text-center small" *ngFor="let valor of valores">
+            <img src="{{ valor.image }}" alt="" width="100px">
+            <!-- <h6 class="p-2 font-weight-bold" ngclass="['color']">{{ valor.titulo }}</h6> -->
+            <p class="h5 mt-4 font-weight-light">{{ valor.descripcion }}</p>
+        </div>
+    </div>
+</div>

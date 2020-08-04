@@ -1,0 +1,91 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light navbarFloat py-3">
+    <div class="container">
+        <a class="navbar-brand" href="">
+            <img class="logo" src="./assets/images/logoZedina.svg" width="220" alt="Logo Zedina">
+        </a>
+
+        <button #navbarToggler class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+        <div class="collapse navbar-collapse cajaNavMobile" id="navbarSupportedContent">
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ml-3" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a (click)="collapseNav()" class="nav-link h5" [routerLink]="['/']">Inicio</a>
+                </li>
+                <li class="nav-item ml-3" routerLinkActive="active">
+                    <a (click)="collapseNav()" class="nav-link h5" [routerLink]="['/nosotros']">Nosotros</a>
+                </li>
+                <li class="nav-item ml-3" routerLinkActive="active">
+                    <a (click)="collapseNav()" class="nav-link h5" [routerLink]="['/productos/lineaRes']">Productos</a>
+                </li>
+                <li class="nav-item ml-3" routerLinkActive="active">
+                    <a (click)="collapseNav()" class="nav-link h5" [routerLink]="['/servicios']">Servicios</a>
+                </li>
+                <li class="nav-item ml-3" routerLinkActive="active">
+                    <a (click)="collapseNav()" class="nav-link h5" [routerLink]="['/contacto']">Contacto</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+</nav> -->
+
+
+
+
+
+
+
+
+
+<!-- <div class="navbarFloat">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a class="my-2 my-md-3" routerLink="/">
+            <img class="logoZedina" src="assets/images/logoZedina.svg" alt="logoImexvetPeru">
+        </a>
+        <div class="d-none d-md-block">
+
+            <nav class="navbar navbar-expand-lg navbar-light px-0">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item mr-3" *ngFor="let link of links">
+                            <a class="nav-link" [routerLink]="link.url">{{link.nombre}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+        <div class="d-block d-md-none">
+          button
+            <button mat-icon-button (click)="openModalMenuMobile()"><img src="assets/images/iconMenuMobile.svg"></button>
+        </div>
+
+    </div>
+</div> -->
+
+<div class="navbarFloat">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a class="my-3 my-md-3" routerLink="/">
+            <img class="logoZedina" src="assets/images/logoZedina.svg" alt="Logo Zedina">
+        </a>
+        <div class="d-flex align-items-center">
+            <a class="ml-4 d-none d-md-block text-dark" style="font-size: 1.2rem;" *ngFor="let link of links" [routerLink]="link.url">{{link.nombre}}</a>
+            <a class="ml-4 btn btn-primary px-3 d-none d-md-block" href="https://api.whatsapp.com/send?phone=51989450287&text=Hola,%20necesito%20realizar%20un%20pedido" target="blank">
+                <span class="h3 align-middle"><i class="fab fa-whatsapp"></i></span>
+                <span class="ml-2 pb-0">PEDIDOS</span>
+            </a>
+            <a class="btn btn-dark py-1 px-3 d-block d-md-none" style="font-size: 0.8rem;" href="https://api.whatsapp.com/send?phone=51989450287&text=Hola,%20necesito%20realizar%20un%20pedido" target="blank">
+                <span class="h5 align-middle"><i class="fab fa-whatsapp"></i></span>
+                <span class="ml-2">PEDIDOS</span>
+            </a>
+            <div class="d-block d-md-none">
+                <button class="ml-2" mat-icon-button (click)="openModalMenuMobile()"><img src="assets/images/iconMenuMobile.svg"></button>
+            </div>
+        </div>
+    </div>
+</div>

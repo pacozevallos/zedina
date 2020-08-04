@@ -1,0 +1,21 @@
+<app-body-linea-res></app-body-linea-res>
+
+<mat-card class="rounded p-3 px-lg-5 py-lg-5 mx-1 mx-lg-0">
+  <div class="row d-flex justify-content-between">
+    <div class="col-lg-6 py-2 p-lg-2 itemProducto" *ngFor="let producto of productos$ | async">
+      <a [routerLink]="['/productos/lineaRes', producto.id]" role="button" class="d-block noFocus" fragment="detalle">
+        <div class="border-bottom rounded py-2 py-lg-3 bg-light">
+          <div class="row d-flex align-items-center px-3 no-gutters ">
+            <div class="col-4">
+              <div style="height:62px;" class="d-flex align-items-center" >
+                <img class="imgFusion" src="{{ producto.imagen }}" alt="" width="80%">
+              </div>
+            </div>
+            <div class="col-7 px-2 px-lg-3"><span class="h5">{{ producto.titulo }}</span></div>
+            <div class="col-1"><span class="h4"><i class="fas fa-angle-right"></i></span></div>
+          </div>
+        </div> 
+      </a>
+    </div>
+  </div>
+</mat-card>

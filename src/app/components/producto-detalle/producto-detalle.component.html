@@ -1,0 +1,56 @@
+<app-body-linea-res *ngIf="categoria == 'lineaRes'"></app-body-linea-res>
+<app-body-linea-cerdo *ngIf="categoria == 'lineaCerdo'"></app-body-linea-cerdo>
+
+<div class="shadow rounded mt-4">
+  <mat-card class="rounded px-lg-5 shadowTop" id="detalle">
+
+    <div class="d-flex justify-content-between">
+      <nav class="">
+        <ol class="breadcrumb d-flex align-items-center">
+          <li class="breadcrumb-item">
+            <a class="btn btn-outline-primary btn-sm px-3" [routerLink]="['/productos', categoria]"><i class="fas fa-arrow-left mr-2"></i> Regresar</a>
+          </li>
+          <li class="breadcrumb-item active">{{ titulo }}</li>
+        </ol>
+      </nav>
+
+      <span class="h3">
+        <a [routerLink]="['/productos/', categoria]"  >
+          <i class="fas fa-times-circle"></i>
+        </a>
+      </span>
+
+    </div>
+
+    <hr class="mt-1">
+
+    <div class="row pt-4">
+      <div class="col-lg-8">
+        <img src="{{ imagen }}" alt="{{ titulo }}" width="100%">
+      </div>
+      <div class="col-lg-4">
+        <h2 class="text-primary font-weight-bold">{{ titulo }}</h2>
+        <p class="font-weight-light">{{ descripcion }}</p>
+        <h5 class="text-primary mt-4">Recomendaciones</h5>
+        <hr class="mt-0">
+        <div class="row">
+          <div *ngFor="let recomendacion of recomendaciones" class="mx-1">
+            <div class="text-center">
+              <div><img src="{{ recomendacion.icon }}" alt="{{ recomendacion.icon }}" width="60px"></div> 
+              <div><span class="badge badge-pill badge-white font-weight-normal px-3 py-2">{{ recomendacion.nombre }}</span></div>  
+            </div>
+          </div>
+        </div>
+        <div *ngIf="ubicacion">
+          <h5 class="text-primary mt-4">Ubicación</h5>
+          <hr class="mt-0">
+          <img  src="{{ ubicacion }}" alt="{{ titulo }}" class="ubicacionImage">
+        </div>
+      </div>
+
+    </div>
+
+
+  </mat-card>
+</div>
+

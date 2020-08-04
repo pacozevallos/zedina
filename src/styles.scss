@@ -1,0 +1,438 @@
+$font-family-base: "Fira Sans";
+// $theme-colors: (
+// 	"primary": #f10d13,
+// 	"secondary": #304aa6,
+//   "light": #d5d5d5,
+//   "warning": #ffb819,
+//   "success": #3fae2a,
+// );
+$primary: #f10d13;
+$secondary: #35302f;
+$light: #f7f6f6;
+$warning: #ffb819;
+$sucess: #3fae2a;
+$danger: #fdb07c;
+$info: #19bbff;
+$spacer: 1rem;
+$spacers: ( 0: 0, 1: ($spacer * .25), 2: ($spacer * .5), 3: $spacer, 4: ($spacer * 2), 5: ($spacer * 3), 6: ($spacer * 4.25), 7: ($spacer * 7), 8: ($spacer * 10), );
+$border-radius: .75rem;
+$border-radius-lg: 1.5rem;
+$border-radius-sm: .5rem;
+$carousel-control-prev-icon-bg: url("./assets/images/iconPrev.svg");
+$carousel-control-next-icon-bg: url("./assets/images/iconNext.svg");
+$font-size-base: 1rem;
+$font-size-lg: ($font-size-base * 1.25);
+$font-size-sm: ($font-size-base * .75);
+//Bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
+//Angular Material
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+//Fonts Google
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,600,600i');
+//Cambiar tipografía Angular Material
+@import '~@angular/material/theming';
+$custom-typography: mat-typography-config( $font-family: 'Fira Sans');
+@include mat-core($custom-typography);
+html,
+body,
+h3,
+h4,
+h5,
+h6 {
+    // color: #8a522f;
+    color: #504138;
+    letter-spacing: 0.02rem;
+    line-height: 150%;
+}
+
+h1,
+h2 {
+    line-height: 120%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 4%;
+}
+
+.button {
+    border-radius: 2rem;
+    background: none;
+    box-shadow: 0px 3px 0px 0px rgba(241, 13, 19, 1);
+    border: none;
+    color: #f10d13
+}
+
+.button-w {
+    border-radius: 2rem;
+    background: none;
+    box-shadow: 0px 3px 0px 0px $warning;
+    border: none;
+    // color: white;
+}
+
+.btn {
+    border-radius: 2rem;
+    // background-color: none;
+    // box-shadow: 0px 10px 0px 0px rgba(241,13,19,1);
+}
+
+.btnPedidos {
+    position: relative;
+    bottom: -24px;
+    border-radius: 2rem;
+    padding: 0.6rem 3rem 0.6rem 3rem;
+}
+
+.navbarFloat {
+    position: absolute;
+    z-index: 999;
+    background: none !important;
+    width: 100%;
+}
+
+.slide1 {
+    height: 642px;
+    background-image: url('./assets/images/banner4.jpg');
+    background-size: cover;
+    @include media-breakpoint-only(xs) {
+        height: 442px;
+        background-image: url('./assets/images/banner4Mobile.jpg');
+        background-position: 25%;
+        color: $warning;
+        a {
+            color: white;
+        }
+    }
+}
+
+.slide2 {
+    height: 642px;
+    background-image: url('./assets/images/banner6.jpg');
+    background-size: cover;
+    @include media-breakpoint-only(xs) {
+        height: 442px;
+        background-image: url('./assets/images/banner6Mobile.jpg');
+        background-position: 25%;
+        color: $warning;
+        a {
+            color: white;
+        }
+    }
+}
+
+.slide3 {
+    height: 642px;
+    background-image: url('./assets/images/banner7.jpg');
+    background-size: cover;
+    @include media-breakpoint-only(xs) {
+        height: 442px;
+        background-image: url('./assets/images/banner7.jpg');
+        background-position: 25%;
+        color: $light;
+        a {
+            color: $light;
+        }
+    }
+}
+
+.boxFloat {
+    width: 100%;
+    margin-right: auto;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    height: 642px;
+    @include media-breakpoint-only(xs) {
+        height: 442px;
+    }
+}
+
+// .backBannerMain {
+//   height: 642px;
+//   background-image: url('./assets/images/banner1.jpg');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+.backNosotros {
+    background-image: url('./assets/images/bgNosotros.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backCortes {
+    background-image: url('./assets/images/bgCortes.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backCortes div img {
+    mix-blend-mode: multiply;
+}
+
+.backServicios {
+    background-image: url('./assets/images/bgServicios.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// .bgLineaRes {
+//   background-image: url('./assets/images/bgLineaRes.png');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-size: 800px;
+// }
+.boxRes a:hover {
+    text-decoration: none;
+    background-image: url('./assets/images/bgLineaRes.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.boxRes button {
+    opacity: 0;
+}
+
+.boxRes a:hover button {
+    display: block !important;
+    opacity: 1;
+    margin: auto;
+}
+
+.boxCerdo a:hover {
+    text-decoration: none;
+    background-image: url('./assets/images/bgLineaCerdo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.boxCerdo button {
+    opacity: 0;
+}
+
+.boxCerdo a:hover button {
+    display: block !important;
+    opacity: 1;
+    margin: auto;
+}
+
+.boxAve a:hover {
+    text-decoration: none;
+    background-image: url('./assets/images/bgLineaAves.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.boxAve button {
+    opacity: 0;
+}
+
+.boxAve a:hover button {
+    display: block !important;
+    opacity: 1;
+    margin: auto;
+}
+
+.boxImportados a:hover {
+    text-decoration: none;
+    background-image: url('./assets/images/bgLineaImportados.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.boxImportados button {
+    opacity: 0;
+}
+
+.boxImportados a:hover button {
+    display: block !important;
+    opacity: 1;
+    margin: auto;
+}
+
+.boxLinea .h3 {
+    @include media-breakpoint-only(xs) {
+        font-size: 1.3rem;
+    }
+}
+
+.boxMision {
+    background: linear-gradient(132.66989119893572deg, rgba(255, 213, 66, 1) 31.635416666666668%, rgba(255, 212, 65, 1) 31.635416666666668%, rgba(255, 184, 25, 1) 60.940972222222214%)
+}
+
+.boxMisionInside {
+    background-image: url('./assets/images/iconMision.svg');
+    background-repeat: no-repeat;
+    background-position: 130% 50%;
+    background-size: 300px;
+}
+
+.boxVision {
+    background: linear-gradient(224.92246854595157deg, rgba(114, 202, 88, 1) 16.7687074829932%, rgba(63, 174, 42, 1) 67.10884353741497%)
+}
+
+.bgMision {
+    background-image: url('./assets/images/mision.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bgVision {
+    background-image: url('./assets/images/camionZedina.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.subNav .nav-link {
+    background-color: #d5d5d5;
+}
+
+//Botones menu secundario
+.subNav>.nav-item:nth-child(1)>.nav-link:hover,
+.subNav>.nav-item:nth-child(1)>.nav-link.active {
+    background-color: $primary;
+}
+
+.subNav>.nav-item:nth-child(2)>.nav-link:hover,
+.subNav>.nav-item:nth-child(2)>.nav-link.active {
+    background-color: $danger;
+}
+
+.subNav>.nav-item:nth-child(3)>.nav-link:hover,
+.subNav>.nav-item:nth-child(3)>.nav-link.active {
+    background-color: $warning;
+}
+
+.subNav>.nav-item:nth-child(4)>.nav-link:hover,
+.subNav>.nav-item:nth-child(4)>.nav-link.active {
+    background-color: $sucess;
+}
+
+.iconProduct {
+    width: 56px;
+    @include media-breakpoint-only(xs) {
+        width: 36px;
+    }
+}
+
+.breadcrumb {
+    padding: 0;
+    font-size: $font-size-sm;
+    background: none !important;
+}
+
+.noFocus:focus {
+    outline: none !important;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+.ubicacionImage {
+    width: 50%;
+    @include media-breakpoint-only(xs) {
+        width: 50%;
+    }
+}
+
+hr {
+    border: 0;
+    // margin:0;
+    width: 100%;
+    height: 1px;
+    background: $primary;
+    opacity: 0.3;
+}
+
+.shadowTop {
+    box-shadow: 0px 6px $primary inset !important;
+}
+
+.shadow {
+    box-shadow: 0px 3px 12px #d5d5d5 !important;
+}
+
+.itemProducto a:hover {
+    text-decoration: none;
+}
+
+.cajaNavMobile {
+    @include media-breakpoint-only(xs) {
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 0px 3px 9px $secondary;
+    }
+}
+
+.boxServicios {
+    background-image: url('assets/images/lineaServicios.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+}
+
+.bloqueTextServicios p {
+    @include media-breakpoint-only(xs) {
+        font-size: $font-size-sm;
+    }
+}
+
+.imgFusion {
+    // background-blend-mode: multiply;
+    mix-blend-mode: multiply
+}
+
+// .containerImgFusion {
+//   background-color: red;
+// }
+mat-form-field {
+    width: 100%;
+}
+
+.alphaMision {
+    background-image: url('assets/images/iconMision.svg');
+    background-repeat: no-repeat;
+    background-position: -80% 50%;
+    background-size: auto 90%;
+    background-blend-mode: lighten;
+    opacity: 0.2;
+    height: 100%;
+}
+
+.alphaVision {
+    background-image: url('assets/images/iconVision.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    background-size: auto 90%;
+    background-blend-mode: lighten;
+    opacity: 0.2;
+    height: 100%;
+}
+
+.modalFullScreen {
+    max-width: none !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    @include media-breakpoint-only(xs) {
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+}
+
+.logoZedina {
+    width: 240px;
+    @include media-breakpoint-only(xs) {
+        width: 150px;
+    }
+}

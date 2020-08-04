@@ -1,0 +1,11 @@
+<div class="text-right">
+    <button mat-icon-button (click)="cancelar()"><mat-icon>close</mat-icon> </button>
+</div>
+<div class="d-flex flex-column text-center">
+    <a class="lead my-2" *ngFor="let link of links" [routerLink]="link.url" (click)="cancelar()">{{link.nombre}}</a>
+    <!-- <div class="small text-muted border-top mt-3 pt-3">
+        <a class="text-reset" href="mailto:info@imexvetvetperu.com">info@imexvetvetperu.com</a>
+        <br>
+        <a class="text-reset" href="tel:015438022">(+51) 01 5438 022</a>
+    </div> -->
+</div>

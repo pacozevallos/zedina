@@ -1,0 +1,99 @@
+<div class="pt-6">
+    <div class="container">
+        <hr class="mt-4 mb-0">
+    </div>
+    <div class="backNosotros pt-3">
+        <div class="container">
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/']">Inicio</a></li>
+                    <li class="breadcrumb-item active">Contacto</li>
+                </ol>
+            </nav>
+
+            <div class="row pt-4 pb-8 d-flex justify-content-between">
+                <div class="col-lg-4 mb-5">
+                    <h4>Estamos en constante búsqueda</h4>
+                    <!-- <hr> -->
+                    <img src="assets/images/trabajadores.png" alt="trabaja con Zedina" width="100%" class="px-4 mt-4">
+                    <hr class="mt-0">
+                    <!-- <h4>Trabaja con nosotros</h4>
+          <hr> -->
+                    <p>En Zedina estamos en la constante búsqueda de profesionales que sean parte de nuestro equipo humano con el fin de cumplir los objetivos comerciales de nuestra empresa.</p>
+
+                    <mat-card class="bg-white rounded py-3 px-4">
+                        <span class="h4 float-left text-primary mr-3"><i class="far fa-address-card"></i></span>
+                        <span>Envia tu CV a: <br> <a href="mailto:talentohumano@carneszedina.com">talentohumano@carneszedina.com</a></span>
+                    </mat-card>
+
+                </div>
+                <div class="col-lg-7">
+                    <h4>Escríbenos</h4>
+                    <form #f="ngForm" [formGroup]="forma" (ngSubmit)="enviarMensaje()" novalidate>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Nombre Comercial</mat-label>
+                                    <input matInput placeholder="Nombre comercial" formControlName="nombreComercial">
+                                    <mat-error *ngIf="forma.controls['nombreComercial'].invalid">{{ errorNombreComercial() }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Ruc</mat-label>
+                                    <input matInput placeholder="Ruc" formControlName="ruc">
+                                    <mat-error *ngIf="forma.controls['ruc'].invalid">{{ errorRuc() }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Persona de contacto</mat-label>
+                                    <input matInput placeholder="Persona de contacto" formControlName="personaContacto">
+                                    <mat-error *ngIf="forma.controls['personaContacto'].invalid">{{ errorPersonaContacto() }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Celular</mat-label>
+                                    <input matInput placeholder="Celular" formControlName="celular">
+                                    <mat-error *ngIf="forma.controls['celular'].invalid">{{ errorCelular() }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput placeholder="Email" formControlName="email">
+                                    <mat-error *ngIf="forma.controls['email'].invalid">{{ errorEmail() }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Tu mensaje</mat-label>
+                                <textarea rows="6" #mensaje maxlength="1200" matInput placeholder="Cuéntanos como podemos ayudarte" formControlName="mensaje"></textarea>
+                                <mat-error *ngIf="forma.controls['mensaje'].invalid">{{ errorMensaje() }}</mat-error>
+                                <mat-hint>Máximo 1200 caracteres</mat-hint>
+                                <mat-hint align="end">{{mensaje.value?.length || 0}}/1200</mat-hint>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="mt-3 text-right">
+                            <button type="submit" class="btn btn-primary px-4 py-2" [disabled]="!forma.valid"><i class="fas fa-arrow-right mr-2"></i> Enviar mensaje</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
