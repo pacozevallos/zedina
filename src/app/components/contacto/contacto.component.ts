@@ -14,11 +14,11 @@ export class ContactoComponent implements OnInit {
   forma: FormGroup;
   @ViewChild('f') form;
 
-   //SnackBar
-   message: string = 'Gracias, tu mensaje ha sido enviado. En breve nos pondremos en contacto.';
+   // SnackBar
+   message = 'Gracias, tu mensaje ha sido enviado. En breve nos pondremos en contacto.';
    action: string;
 
-  constructor( fb: FormBuilder, private fs: FirebaseService, public snackBar: MatSnackBar ) { 
+  constructor( fb: FormBuilder, private fs: FirebaseService, public snackBar: MatSnackBar ) {
     this.forma = fb.group ({
       nombreComercial: [ '', Validators.required ],
       ruc: ['', Validators.required],
@@ -27,7 +27,7 @@ export class ContactoComponent implements OnInit {
       email: [ '', [Validators.required, Validators.email] ],
       mensaje: [ '', [Validators.required, Validators.maxLength(1200)] ],
       fecha: [ firebase.firestore.FieldValue.serverTimestamp() ],
-    })
+    });
    }
 
   ngOnInit() {
@@ -37,10 +37,9 @@ export class ContactoComponent implements OnInit {
     this.fs.addMensaje(this.forma.value)
     .then(() => {
       console.log(this.forma.value);
-      this.form.resetForm({ 
+      this.form.resetForm({
         fecha: firebase.firestore.FieldValue.serverTimestamp()
       });
-  
       this.snackBar.open(this.message, this.action, {
         duration: 5000,
       });
@@ -60,11 +59,12 @@ export class ContactoComponent implements OnInit {
     return this.forma.controls.celular.hasError('required') ? 'El celular es necesario.' : '';
   }
   errorEmail() {
-    return this.forma.controls.email.hasError('required') ? 'El email es necesario.' : this.forma.controls.email.hasError('email') ? 'No es un correo válido' : '';
+    return this.forma.controls.email.hasError('required') ? 'El email es necesario.' :
+    this.forma.controls.email.hasError('email') ? 'No es un correo válido' : '';
   }
   errorMensaje() {
     return this.forma.controls.mensaje.hasError('required') ? 'El mensaje es necesario.' :
-    this.forma.controls.mensaje.hasError('maxlength')? 'Máximo 1200 caracteres': '';
+    this.forma.controls.mensaje.hasError('maxlength') ? 'Máximo 1200 caracteres' : '';
   }
 
 
